@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ProductService } from './product/product.service';
-import { ProductController } from './product/product.controller';
-import { Product } from './model/product.model';
+import { UserService } from './user/user.service';
+import { UserController } from './user/user.controller';
+import { User } from './model/user.model';
 
 @Module({
   imports: [
@@ -19,9 +19,9 @@ import { Product } from './model/product.model';
       synchronize: true,
       autoLoadEntities: true,
     }),
-    TypeOrmModule.forFeature([Product]),
+    TypeOrmModule.forFeature([User]),
   ],
-  controllers: [AppController, ProductController],
-  providers: [AppService, ProductService],
+  controllers: [AppController, UserController],
+  providers: [AppService, UserService],
 })
 export class AppModule {}

@@ -1,10 +1,10 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { connectKafka } from './config/kafka.config';
+// import { connectKafka } from './config/kafka.config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await connectKafka();
+  // await connectKafka();
   await app.listen(3000);
 }
 bootstrap();
